@@ -11,6 +11,14 @@ target/
 *.iws
 *.iml
 *.ipr
+**/.idea/*!/**.idea/
+/.idea/vcs.xml
+/.idea/.gitignore
+/.idea/encodings.xml
+/.idea/misc.xml
+/.idea/uiDesigner.xml
+/.idea/codeStyles/codeStyleConfig.xml
+/.idea/codeStyles/Project.xml
 
 ### Eclipse ###
 .apt_generated
