@@ -1,43 +1,11 @@
-import com.microsoft.playwright.*;
-import org.junit.jupiter.api.*;
+import com.microsoft.playwright.ElementHandle;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
-import java.nio.file.Paths;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Sidebar {
-
-    static Playwright playwright;
-    static Browser browser;
-
-    // New instance for each test method.
-    BrowserContext context;
-    Page page;
-
-    @BeforeAll
-    static void launchBrowser() {
-        playwright = Playwright.create();
-        browser = playwright.chromium()
-                .launch(new BrowserType.LaunchOptions().setHeadless(false).setSlowMo(150));
-    }
-
-    @AfterAll
-    static void closeBrowser() {
-        playwright.close();
-    }
-
-    @BeforeEach
-    void createContextAndPage() {
-        context = browser.newContext();
-
-        // Start tracing before creating / navigating a page.
-        context.tracing().start(new Tracing.StartOptions()
-                .setScreenshots(true)
-                .setSnapshots(true)
-                .setSources(true));
-
-        page = context.newPage();
-    }
+public class Sidebar extends Base {
 
     @Test
     void guidesABCSort() {
@@ -80,12 +48,5 @@ public class Sidebar {
                 .assertPageContent(page, "Test Runners", "Test Runners")
                 .clickJUnitExperimentalLink()
                 .assertPageContent(page, "JUnit (experimental)", "JUnit (experimental)");
-    }
-
-    @AfterEach
-    void closeContext() {
-        context.tracing().stop(new Tracing.StopOptions()
-                .setPath(Paths.get("trace.zip")));
-        context.close();
     }
 }
