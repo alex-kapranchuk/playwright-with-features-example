@@ -1,3 +1,4 @@
+import com.microsoft.playwright.ElementHandle;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.AriaRole;
 
@@ -34,5 +35,22 @@ public class NavigationHeader {
     public NavigationHeader hoverElement(String element) {
         page.querySelector(element).hover();
         return this;
+    }
+    public ElementHandle findElementBySelector(String selector) {
+        return page.querySelector(selector);
+    }
+
+    public String getComputedColor(ElementHandle element) {
+        return element.evaluate("el => getComputedStyle(el).color").toString();
+    }
+
+    public String getColorElement(String selector) {
+        ElementHandle element = findElementBySelector(selector);
+        return getComputedColor(element);
+    }
+    public String getHoveredColorElement(String selector) {
+        ElementHandle element = findElementBySelector(selector);
+        element.hover();
+        return getComputedColor(element);
     }
 }

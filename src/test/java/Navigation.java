@@ -3,7 +3,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-public class NavigationBar extends Base {
+public class Navigation extends Base {
 
     @Test
     void navigationBar() {

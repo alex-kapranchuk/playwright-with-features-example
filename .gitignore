@@ -19,7 +19,9 @@ target/
 /.idea/uiDesigner.xml
 /.idea/codeStyles/codeStyleConfig.xml
 /.idea/codeStyles/Project.xml
+/.idea/kotlinc.xml
 trace.zip
+/screenshot.png
 
 ### Eclipse ###
 .apt_generated
@@ -45,4 +47,3 @@ build/
 
 ### Mac OS ###
 .DS_Store!/trace.zip
-/.idea/kotlinc.xml
