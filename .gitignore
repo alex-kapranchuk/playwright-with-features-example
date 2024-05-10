@@ -19,6 +19,7 @@ target/
 /.idea/uiDesigner.xml
 /.idea/codeStyles/codeStyleConfig.xml
 /.idea/codeStyles/Project.xml
+trace.zip
 
 ### Eclipse ###
 .apt_generated
@@ -43,4 +44,5 @@ build/
 .vscode/
 
 ### Mac OS ###
-.DS_Store
+.DS_Store!/trace.zip
+/.idea/kotlinc.xml
