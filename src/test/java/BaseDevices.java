@@ -10,7 +10,6 @@ public class BaseDevices {
     static Playwright playwright;
     static Browser browser;
 
-
     BrowserContext context;
     Page page;
 

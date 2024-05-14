@@ -1,7 +1,7 @@
 import com.microsoft.playwright.options.AriaRole;
 import org.junit.jupiter.api.Test;
 
-public class DevicesTest extends BaseDevices {
+public class Devices extends BaseDevices {
 
     @Test
     public void emulationDevices() {
