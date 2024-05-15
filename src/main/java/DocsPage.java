@@ -22,6 +22,10 @@ public class DocsPage {
         page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Node.js")).click();
         return this;
     }
+    public DocsPage clickByMain(String name) {
+        page.getByLabel("Main", new Page.GetByLabelOptions().setExact(true)).getByRole(AriaRole.LINK, new Locator.GetByRoleOptions().setName(name)).click();
+        return this;
+    }
 
     public DocsPage clickJavaLink() {
         page.getByLabel("Main", new Page.GetByLabelOptions().setExact(true)).getByRole(AriaRole.LINK, new Locator.GetByRoleOptions().setName("Java")).click();
