@@ -22,6 +22,11 @@ public class NavigationHeader {
         return this;
     }
 
+    public NavigationHeader fillByRole(AriaRole role, String name, String value) {
+        page.getByRole(role, new Page.GetByRoleOptions().setName(name)).fill(value);
+        return this;
+    }
+
     public NavigationHeader assertHeaderTextContains(String selector, String expectedText) {
         assertThat(page.locator(selector)).containsText(expectedText);
         return this;
@@ -32,10 +37,16 @@ public class NavigationHeader {
         return this;
     }
 
+    public NavigationHeader clickLinkByText(String text) {
+        page.getByText(text).click();
+        return this;
+    }
+
     public NavigationHeader hoverElement(String element) {
         page.querySelector(element).hover();
         return this;
     }
+
     public ElementHandle findElementBySelector(String selector) {
         return page.querySelector(selector);
     }
@@ -48,6 +59,7 @@ public class NavigationHeader {
         ElementHandle element = findElementBySelector(selector);
         return getComputedColor(element);
     }
+
     public String getHoveredColorElement(String selector) {
         ElementHandle element = findElementBySelector(selector);
         element.hover();
