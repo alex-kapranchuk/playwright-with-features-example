@@ -19,7 +19,7 @@ public class Base {
     static void launchBrowser() {
         playwright = Playwright.create();
         browser = playwright.chromium()
-                .launch(new BrowserType.LaunchOptions().setHeadless(false).setSlowMo(150));
+                .launch(new BrowserType.LaunchOptions().setHeadless(true));//.setSlowMo(150));
     }
 
     @AfterAll

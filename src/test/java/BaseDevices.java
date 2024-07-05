@@ -7,6 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import java.nio.file.Paths;
 
 public class BaseDevices {
+
     static Playwright playwright;
     static Browser browser;
 
