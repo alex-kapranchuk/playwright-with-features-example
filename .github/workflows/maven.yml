@@ -1,12 +1,14 @@
-name: Publish Test Report
+name: Playwright Tests
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
 
 jobs:
-  build-and-deploy:
+  test:
+    timeout-minutes: 30
     runs-on: ubuntu-latest
 
     steps:
@@ -22,8 +24,40 @@ jobs:
     - name: Build with Maven
       run: mvn -B install -DskipTests --no-transfer-progress
 
+    - name: Install Playwright and Chrome
+      run: |
+        xvfb-run --auto-servernum -- mvn exec:java -e -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="install chromium"
+
+    - name: Run Tests
+      run: xvfb-run --auto-servernum -- mvn test
+
     - name: Generate Test Report
       run: mvn surefire-report:report
+
+    - name: List Report Files
+      run: ls -la target/site
+
+    - name: Upload Test Results
+      if: always()
+      uses: dorny/test-reporter@v1
+      with:
+        name: Playwright Tests
+        path: target/surefire-reports/*.xml
+        reporter: junit
+        path-replace-backslashes: false
+        list-suites: all
+        list-tests: all
+        max-annotations: 10
+        fail-on-error: true
+        fail-on-empty: true
+        only-summary: false
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
 
     - name: Upload Report to GitHub Pages
       uses: actions/upload-pages-artifact@v1
