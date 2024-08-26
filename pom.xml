@@ -45,9 +45,9 @@
                 <version>3.3.0</version>
                 <configuration>
                     <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
-                    <systemPropertyVariables>
-                        <playwright.reportDir>playwright-report</playwright.reportDir>
-                    </systemPropertyVariables>
+                    <testFailureIgnore>false</testFailureIgnore>
+                    <forkCount>1</forkCount>
+                    <reuseForks>true</reuseForks>
                     <includes>
                         <include>**/*.java</include>
                     </includes>
