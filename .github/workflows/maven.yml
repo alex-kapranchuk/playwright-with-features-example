@@ -32,9 +32,11 @@ jobs:
       run: xvfb-run --auto-servernum -- mvn test
 
     - name: Generate Test Report
+      if: always()
       run: mvn surefire-report:report
 
     - name: List Report Files
+      if: always()
       run: ls -la target/site
 
     - name: Upload Test Results
