@@ -28,9 +28,8 @@ jobs:
     - name: Run tests
       run: mvn test
 
-    - name: Upload Surefire Reports
+    - name: Publish Surefire Report
       if: always()
-      uses: actions/upload-artifact@v3
+      uses: mikepenz/action-surefire-report@v3
       with:
-        name: Surefire Reports
-        path: target/surefire-reports/*.xml
+        paths: '**/target/surefire-reports/*.xml'
