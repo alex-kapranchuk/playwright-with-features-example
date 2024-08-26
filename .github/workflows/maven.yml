@@ -8,7 +8,7 @@ on:
 
 jobs:
   test:
-    timeout-minutes: 60
+    timeout-minutes: 30
     runs-on: ubuntu-latest
 
     steps:
@@ -20,18 +20,13 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-        cache: maven
 
     - name: Build with Maven
       run: mvn -B install -DskipTests --no-transfer-progress
 
-    - name: Install Playwright and Dependencies
-      run: xvfb-run --auto-servernum -- mvn exec:java -e -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="install --with-deps"
-
-    - name: Configure Playwright to Use Chrome
+    - name: Install Playwright and Chrome
       run: |
-        echo "PLAYWRIGHT_BROWSERS_PATH=/usr/local/playwright" >> $GITHUB_ENV
-        echo "PLAYWRIGHT_CHROMIUM_DOWNLOAD_HOST=chrome" >> $GITHUB_ENV
+        xvfb-run --auto-servernum -- mvn exec:java -e -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="install chromium"
 
     - name: Run Tests
       run: xvfb-run --auto-servernum -- mvn test
@@ -49,6 +44,3 @@ jobs:
         fail-on-error: true
         fail-on-empty: true
         only-summary: false
-        token: ${{ secrets.GITHUB_TOKEN }}
-      env:
-        JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.12-7/x64
