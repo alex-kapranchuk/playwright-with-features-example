@@ -1,19 +1,12 @@
-name: Playwright Tests
+name: Publish Test Report
 
 on:
   push:
-    branches: [ main, master ]
-  pull_request:
-    branches: [ main, master ]
-
-permissions:
-  contents: read
-  actions: read
-  checks: write
+    branches:
+      - main
 
 jobs:
-  test:
-    timeout-minutes: 30
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -29,19 +22,16 @@ jobs:
     - name: Build with Maven
       run: mvn -B install -DskipTests --no-transfer-progress
 
-    - name: Install Playwright and Chrome
-      run: |
-        xvfb-run --auto-servernum -- mvn exec:java -e -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="install chromium"
+    - name: Generate Test Report
+      run: mvn surefire-report:report
 
-    - name: Run Tests
-      run: xvfb-run --auto-servernum -- mvn test
-
-    - name: List Report Files
-      run: ls -la target/surefire-reports/
-
-    - name: Upload Test Results
-      if: always()  # Always run this step regardless of test results
-      uses: actions/upload-artifact@v3
+    - name: Upload Report to GitHub Pages
+      uses: actions/upload-pages-artifact@v1
       with:
-        name: junit-test-results
-        path: target/surefire-reports/*.xml
+        path: target/site
+
+    - name: Deploy to GitHub Pages
+      uses: github/pages-deploy-action@v1
+      with:
+        branch: gh-pages
+        folder: target/site
