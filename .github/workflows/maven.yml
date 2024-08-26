@@ -29,14 +29,14 @@ jobs:
     - name: Install Playwright
       run: mvn exec:java -e -D exec.mainClass=com.microsoft.playwright.CLI -D exec.args="install --with-deps"
 
-      # Крок для запуску Playwright тестів
+      # Крок для запуску Playwright тестів з генерацією звітів
     - name: Run Playwright tests
-      run: mvn test
+      run: mvn test -Dplaywright.reportDir=playwright-report
 
-      # Крок для збереження результатів тестів
+      # Крок для збереження результатів тестів Playwright
     - name: Store Playwright test results
       if: always()
       uses: actions/upload-artifact@v3
       with:
         name: playwright-test-results
-        path: target/surefire-reports/
+        path: playwright-report/
