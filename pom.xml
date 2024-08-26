@@ -44,8 +44,12 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.3.0</version>
                 <configuration>
+                    <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
+                    <systemPropertyVariables>
+                        <playwright.reportDir>playwright-report</playwright.reportDir>
+                    </systemPropertyVariables>
                     <includes>
-                        <include>**/*Test.java</include>
+                        <include>**/*.java</include>
                     </includes>
                 </configuration>
             </plugin>
