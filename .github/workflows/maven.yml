@@ -12,31 +12,39 @@ jobs:
     timeout-minutes: 60
 
     steps:
-    - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-    - uses: actions/setup-java@v3
-      with:
-        distribution: 'temurin'
-        java-version: '17'
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
 
-    - name: Install dependencies
-      run: mvn -B install -DskipTests --no-transfer-progress
+      - name: Install dependencies
+        run: mvn -B install -DskipTests --no-transfer-progress
 
-    - name: Install Playwright browsers
-      run: xvfb-run --auto-servernum -- mvn exec:java -e -D exec.mainClass=com.microsoft.playwright.CLI -D exec.args="install --with-deps"
+      - name: Install Playwright browsers
+        run: xvfb-run --auto-servernum -- mvn exec:java -e -D exec.mainClass=com.microsoft.playwright.CLI -D exec.args="install --with-deps"
 
-    - name: Run tests
-      run: xvfb-run --auto-servernum -- mvn test
+      - name: Run tests
+        run: xvfb-run --auto-servernum -- mvn test
 
-    - name: Publish Surefire Report
-      if: always()  # Ensure the report is published even if tests fail
-      uses: scacap/action-surefire-report@v1
-      with:
-        report_paths: '**/surefire-reports/TEST-*.xml'
+      - name: Publish Surefire Report
+        if: always()  # Ensure the report is published even if tests fail
+        uses: scacap/action-surefire-report@v1
+        with:
+          report_paths: '**/surefire-reports/TEST-*.xml'
 
-    - name: Upload test results
-      if: always()
-      uses: actions/upload-artifact@v3
-      with:
-        name: surefire-reports
-        path: target/surefire-reports/*.xml
+      - name: Upload Test Results
+        if: always()  # Ensure the upload happens even if tests fail
+        uses: actions/upload-artifact@v3
+        with:
+          name: Test Results
+          path: target/surefire-reports/*.xml
+
+      - name: Display Test Results in GitHub
+        if: always()
+        uses: dorny/test-reporter@v1
+        with:
+          name: Playwright Tests
+          path: target/surefire-reports/*.xml
+          reporter: junit
