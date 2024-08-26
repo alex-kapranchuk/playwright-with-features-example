@@ -28,6 +28,11 @@ jobs:
     - name: Install Playwright and Dependencies
       run: xvfb-run --auto-servernum -- mvn exec:java -e -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="install --with-deps"
 
+    - name: Configure Playwright to Use Chrome
+      run: |
+        echo "PLAYWRIGHT_BROWSERS_PATH=/usr/local/playwright" >> $GITHUB_ENV
+        echo "PLAYWRIGHT_CHROMIUM_DOWNLOAD_HOST=chrome" >> $GITHUB_ENV
+
     - name: Run Tests
       run: xvfb-run --auto-servernum -- mvn test
 
