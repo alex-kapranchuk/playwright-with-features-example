@@ -6,6 +6,11 @@ on:
   pull_request:
     branches: [ main, master ]
 
+permissions:
+  contents: read
+  actions: read
+  checks: write
+
 jobs:
   test:
     timeout-minutes: 30
@@ -36,15 +41,7 @@ jobs:
 
     - name: Upload Test Results
       if: always()  # Always run this step regardless of test results
-      uses: dorny/test-reporter@v1
+      uses: actions/upload-artifact@v3
       with:
-        name: Playwright Tests
+        name: junit-test-results
         path: target/surefire-reports/*.xml
-        reporter: junit
-        path-replace-backslashes: false
-        list-suites: all
-        list-tests: all
-        max-annotations: 10
-        fail-on-error: true
-        fail-on-empty: true
-        only-summary: false
