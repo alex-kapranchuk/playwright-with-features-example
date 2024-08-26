@@ -43,7 +43,7 @@ jobs:
       with:
         name: Playwright Tests
         path: target/surefire-reports/*.xml
-        reporter: junit
+        reporter: jest-junit
         path-replace-backslashes: false
         list-suites: all
         list-tests: all
