@@ -31,7 +31,11 @@ jobs:
     - name: Run Tests
       run: xvfb-run --auto-servernum -- mvn test
 
+    - name: List Report Files
+      run: ls -la target/surefire-reports/
+
     - name: Upload Test Results
+      if: always()  # Always run this step regardless of test results
       uses: dorny/test-reporter@v1
       with:
         name: Playwright Tests
