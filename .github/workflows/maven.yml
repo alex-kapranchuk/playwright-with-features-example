@@ -31,43 +31,23 @@ jobs:
     - name: Run Tests
       run: xvfb-run --auto-servernum -- mvn test
 
-    - name: Generate Test Report
-      if: always()
-      run: mvn surefire-report:report
-
     - name: List Report Files
-      if: always()
-      run: ls -la target/site
+      run: ls -la target/surefire-reports/
+
+    - name: Generate HTML Report
+      run: mvn surefire-report:report-only
 
     - name: Upload Test Results
       if: always()
-      uses: dorny/test-reporter@v1
+      uses: actions/upload-artifact@v3
       with:
-        name: Playwright Tests
-        path: target/surefire-reports/*.xml
-        reporter: jest-junit
-        path-replace-backslashes: false
-        list-suites: all
-        list-tests: all
-        max-annotations: 10
-        fail-on-error: true
-        fail-on-empty: true
-        only-summary: false
-
-  deploy:
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout Code
-      uses: actions/checkout@v4
-
-    - name: Upload Report to GitHub Pages
-      uses: actions/upload-pages-artifact@v1
-      with:
+        name: test-results
         path: target/site
 
     - name: Deploy to GitHub Pages
-      uses: github/pages-deploy-action@v1
+      if: always()
+      uses: peaceiris/actions-gh-pages@v3
       with:
-        branch: gh-pages
-        folder: target/site
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: target/site
+        publish_branch: gh-pages
