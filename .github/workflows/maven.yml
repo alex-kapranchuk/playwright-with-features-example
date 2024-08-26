@@ -12,39 +12,39 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
+    - name: Checkout Code
+      uses: actions/checkout@v4
 
-      - name: Set up JDK 17
-        uses: actions/setup-java@v4
-        with:
-          java-version: '17'
-          distribution: 'temurin'
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
 
-      - name: Build with Maven
-        run: mvn -B install -DskipTests --no-transfer-progress
+    - name: Build with Maven
+      run: mvn -B install -DskipTests --no-transfer-progress
 
-      - name: Install Playwright and Chrome
-        run: |
-          xvfb-run --auto-servernum -- mvn exec:java -e -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="install chromium"
+    - name: Install Playwright and Chrome
+      run: |
+        xvfb-run --auto-servernum -- mvn exec:java -e -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="install chromium"
 
-      - name: Run Tests
-        run: xvfb-run --auto-servernum -- mvn test
+    - name: Run Tests
+      run: xvfb-run --auto-servernum -- mvn test
 
-      - name: List Report Files
-        run: ls -la target/surefire-reports/
+    - name: List Report Files
+      run: ls -la target/surefire-reports/
 
-      - name: Upload Test Results
-        if: always()  # Always run this step regardless of test results
-        uses: dorny/test-reporter@v2
-        with:
-          name: Playwright Tests
-          path: target/surefire-reports/*.xml
-          reporter: junit
-          path-replace-backslashes: false
-          list-suites: all
-          list-tests: all
-          max-annotations: 10
-          fail-on-error: true
-          fail-on-empty: true
-          only-summary: false
+    - name: Upload Test Results
+      if: always()  # Always run this step regardless of test results
+      uses: dorny/test-reporter@v1
+      with:
+        name: Playwright Tests
+        path: target/surefire-reports/*.xml
+        reporter: junit
+        path-replace-backslashes: false
+        list-suites: all
+        list-tests: all
+        max-annotations: 10
+        fail-on-error: true
+        fail-on-empty: true
+        only-summary: false
