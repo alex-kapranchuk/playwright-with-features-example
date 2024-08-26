@@ -33,3 +33,10 @@ jobs:
       uses: scacap/action-surefire-report@v1
       with:
         report_paths: '**/surefire-reports/TEST-*.xml'
+
+    - name: Upload test results
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: surefire-reports
+        path: target/surefire-reports/*.xml
