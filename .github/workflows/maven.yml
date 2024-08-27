@@ -1,47 +1,78 @@
-name: Java Maven CI
+name: Java CI with Maven
 
 on:
   push:
-    branches: [master]
+    branches:
+      - master
   pull_request:
-    branches: [master]
-
-permissions:
-  contents: write
+    branches:
+      - master
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
+    - name: Check out repository
       uses: actions/checkout@v2
 
     - name: Set up JDK 17
-      uses: actions/setup-java@v3
+      uses: actions/setup-java@v2
       with:
         java-version: '17'
-        distribution: 'temurin'
+        distribution: 'adopt'
 
-    - name: Install Playwright Dependencies
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y libwoff2dec0 libvpx7 libevent-2.1-7 libopus0 libharfbuzz-icu0 libgstallocators-1.0-0 libgstapp-1.0-0 libgstpbutils-1.0-0 libgstaudio-1.0-0 libgsttag-1.0-0 libgstvideo-1.0-0 libgstgl-1.0-0 libgstcodecparsers-1.0-0 libgstfft-1.0-0 libhyphen0 libmanette-0.2-0 libflite1 libflite_usenglish1 libflite_cmu_grapheme_lang1 libflite_cmu_grapheme_lex1 libflite_cmu_indic_lang1 libflite_cmu_indic_lex1 libflite_cmulex1 libflite_cmu_time_awb1 libflite_cmu_us_awb1 libflite_cmu_us_kal16 libflite_cmu_us_kal libflite_cmu_us_rms libflite_cmu_us_slt libGLESv2-2 libx264-163
+    - name: Install dependencies
+      run: sudo apt-get update && sudo apt-get install -y \
+        libwoff2dec1 \
+        libvpx7 \
+        libevent-2.1-7 \
+        libopus0 \
+        libharfbuzz-icu0 \
+        libgstallocators-1.0-0 \
+        libgstapp-1.0-0 \
+        libgstpbutils-1.0-0 \
+        libgstaudio-1.0-0 \
+        libgsttag-1.0-0 \
+        libgstvideo-1.0-0 \
+        libgstgl-1.0-0 \
+        libgstcodecparsers-1.0-0 \
+        libgstfft-1.0-0 \
+        libhyphen0 \
+        libmanette-0.2-0 \
+        libflite1 \
+        libflite_usenglish1 \
+        libflite_cmu_grapheme_lang1 \
+        libflite_cmu_grapheme_lex1 \
+        libflite_cmu_indic_lang1 \
+        libflite_cmu_indic_lex1 \
+        libflite_cmulex1 \
+        libflite_cmu_time_awb1 \
+        libflite_cmu_us_awb1 \
+        libflite_cmu_us_kal16 \
+        libflite_cmu_us_kal1 \
+        libflite_cmu_us_rms1 \
+        libflite_cmu_us_slt1 \
+        libgles2-mesa \
+        libx264-163 \
+        xvfb
+
+    - name: Install Playwright Browsers
+      run: npx playwright install-deps
 
     - name: Build with Maven
-      run: mvn -B clean verify
+      run: mvn clean install --batch-mode
+
+    - name: Run Tests
+      run: mvn test --batch-mode
 
     - name: Publish JUnit Test Report
       uses: scacap/action-surefire-report@v1
-      if: always()
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        report_paths: '**/surefire-reports/TEST-*.xml'
+        report_paths: '**/surefire-reports/*.xml'
 
-    - name: Deploy to GitHub Pages
-      if: always()
-      uses: peaceiris/actions-gh-pages@v3
+    - name: Upload Test Results
+      uses: actions/upload-artifact@v3
       with:
-        github_token: ${{ secrets.SECRETTOKEN }}
-        publish_dir: ./target/surefire-reports/
-        destination_dir: 'junit-reports'
+        name: test-results
+        path: '**/surefire-reports/*.xml'
