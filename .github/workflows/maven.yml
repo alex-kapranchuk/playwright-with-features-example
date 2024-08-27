@@ -1,43 +1,42 @@
-# название
-name: Project test & build
+name: Java Maven CI
 
-# целевые события для запуска
-# в данном случае это push и pull_request, в ветку master
 on:
   push:
-    branches: [ master ]
+    branches: [main]
   pull_request:
-    branches: [ master ]
+    branches: [main]
 
-# выполняемые действия
+permissions:
+  contents: write
+
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
-    
-    # запускаются по шагам
-    # name - название шага
-    # в github actions будет выводиться название шага, и процессы
+
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v2.3.1
-        with:
-          persist-credentials: false
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-      - name: Install 🔧
-        run: npm install
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
 
-      - name: Run Test 🔨
-        run: npm run test
+    - name: Build with Maven
+      run: mvn -B clean verify
 
-      - name: Build 👷
-        run: npm run build
+    - name: Publish JUnit Test Report
+      uses: scacap/action-surefire-report@v2
+      if: always()
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        reports_paths: '**/surefire-reports/TEST-*.xml'
 
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@3.7.1
-        with:
-          # в значение GITHUB_TOKEN помещается ссылка на ваш секрет в репозитории
-          # в данном случае его название KEY
-          GITHUB_TOKEN: ${{ secrets.secretToken }}
-          BRANCH: gh-pages
-          FOLDER: public
-          CLEAN: true
+    - name: Deploy to GitHub Pages
+      if: always()
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.secretTOKEN }}
+        publish_dir: ./target/surefire-reports/
+        destination_dir: 'junit-reports'
