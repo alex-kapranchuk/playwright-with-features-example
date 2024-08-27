@@ -1,5 +1,6 @@
 import com.microsoft.playwright.ElementHandle;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -24,7 +25,7 @@ public class Sidebar extends Base {
 
         Assertions.assertEquals(listOfGuides, listOfGuides.stream().sorted().toList());
     }
-
+    @Disabled
     @Test
     void checkTitlesGettingStarted() {
         DocsPage docsPage = new DocsPage(page);

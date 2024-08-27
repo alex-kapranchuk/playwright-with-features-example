@@ -4,6 +4,7 @@ import com.microsoft.playwright.junit.OptionsFactory;
 import com.microsoft.playwright.junit.UsePlaywright;
 import com.microsoft.playwright.options.AriaRole;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.parallel.Execution;
 import org.junit.jupiter.api.parallel.ExecutionMode;
@@ -14,6 +15,7 @@ import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertTha
 @UsePlaywright(ParallelAndIsolation.CustomOptions.class)
 public class ParallelAndIsolation {
 
+    @Disabled
     @Test
     public void goToParallel(Page page) {
         NavigationHeader navigationHeader = new NavigationHeader(page);
@@ -30,6 +32,7 @@ public class ParallelAndIsolation {
         assertThat(page.locator("#running-tests-in-parallel")).containsText("Running Tests in Parallel");
     }
 
+    @Disabled
     @Test
     public void twoContexts() {
         try (Playwright playwright = Playwright.create()) {

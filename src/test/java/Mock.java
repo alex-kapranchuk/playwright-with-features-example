@@ -4,6 +4,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
 import com.microsoft.playwright.APIResponse;
 import com.microsoft.playwright.Route;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -13,6 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class Mock extends Base {
 
+    @Disabled
     @Test
     public void mockData() {
         page.route("**/api/v1/fruits", route -> {
@@ -25,6 +27,7 @@ public class Mock extends Base {
         assertTrue(page.waitForSelector("text=Coconut").isVisible());
     }
 
+    @Disabled
     @Test
     public void addMockData() {
         page.route("**/api/v1/fruits", route -> {

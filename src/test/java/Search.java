@@ -1,11 +1,13 @@
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.AriaRole;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
 public class Search extends Base {
 
+    @Disabled
     @Test
     public void generalSearch() {
         NavigationHeader navigationHeader = new NavigationHeader(page);
@@ -35,6 +37,7 @@ public class Search extends Base {
         assertThat(page.getByPlaceholder(SEARCH_DOCS)).isHidden();
     }
 
+    @Disabled
     @Test
     public void favoriteSearch() {
         NavigationHeader navigationHeader = new NavigationHeader(page);

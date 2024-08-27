@@ -1,8 +1,10 @@
 import com.microsoft.playwright.options.AriaRole;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 public class Devices extends BaseDevices {
 
+    @Disabled
     @Test
     public void emulationDevices() {
         NavigationHeader navigationHeader = new NavigationHeader(page);

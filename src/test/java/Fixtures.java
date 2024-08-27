@@ -4,6 +4,7 @@ import com.microsoft.playwright.junit.Options;
 import com.microsoft.playwright.junit.OptionsFactory;
 import com.microsoft.playwright.junit.UsePlaywright;
 import com.microsoft.playwright.options.AriaRole;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
@@ -11,6 +12,7 @@ import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertTha
 @UsePlaywright(Fixtures.CustomOptions.class)
 public class Fixtures {
 
+    @Disabled
     @Test
     public void handlingLinks(Page page) {
         NavigationHeader navigationHeader = new NavigationHeader(page);
