@@ -23,6 +23,11 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
+    - name: Install Playwright Dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y libwoff2dec0 libvpx7 libevent-2.1-7 libopus0 libharfbuzz-icu0 libgstallocators-1.0-0 libgstapp-1.0-0 libgstpbutils-1.0-0 libgstaudio-1.0-0 libgsttag-1.0-0 libgstvideo-1.0-0 libgstgl-1.0-0 libgstcodecparsers-1.0-0 libgstfft-1.0-0 libhyphen0 libmanette-0.2-0 libflite1 libflite_usenglish1 libflite_cmu_grapheme_lang1 libflite_cmu_grapheme_lex1 libflite_cmu_indic_lang1 libflite_cmu_indic_lex1 libflite_cmulex1 libflite_cmu_time_awb1 libflite_cmu_us_awb1 libflite_cmu_us_kal16 libflite_cmu_us_kal libflite_cmu_us_rms libflite_cmu_us_slt libGLESv2-2 libx264-163
+
     - name: Build with Maven
       run: mvn -B clean verify
 
@@ -31,12 +36,12 @@ jobs:
       if: always()
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        reports_paths: '**/surefire-reports/TEST-*.xml'
+        report_paths: '**/surefire-reports/TEST-*.xml'
 
     - name: Deploy to GitHub Pages
       if: always()
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.secretTOKEN }}
+        github_token: ${{ secrets.SECRETTOKEN }}
         publish_dir: ./target/surefire-reports/
         destination_dir: 'junit-reports'
