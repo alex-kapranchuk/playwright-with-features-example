@@ -61,10 +61,13 @@
                     <execution>
                         <phase>verify</phase>
                         <goals>
-                            <goal>report</goal>
+                            <goal>report-only</goal>
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <outputDirectory>${project.build.directory}/site</outputDirectory>
+                </configuration>
             </plugin>
         </plugins>
     </build>
