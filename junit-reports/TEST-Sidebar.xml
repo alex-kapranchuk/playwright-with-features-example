@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="Sidebar" time="2.964" tests="4" errors="3" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/runner/work/playwright-with-features-example/playwright-with-features-example/target/test-classes:/home/runner/work/playwright-with-features-example/playwright-with-features-example/target/classes:/home/runner/.m2/repository/com/microsoft/playwright/playwright/1.42.0/playwright-1.42.0.jar:/home/runner/.m2/repository/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar:/home/runner/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/runner/.m2/repository/com/microsoft/playwright/driver/1.42.0/driver-1.42.0.jar:/home/runner/.m2/repository/com/microsoft/playwright/driver-bundle/1.42.0/driver-bundle-1.42.0.jar:/home/runner/.m2/repository/org/junit/jupiter/junit-jupiter/5.11.0-M1/junit-jupiter-5.11.0-M1.jar:/home/runner/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.11.0-M1/junit-jupiter-api-5.11.0-M1.jar:/home/runner/.m2/repository/org/junit/platform/junit-platform-commons/1.11.0-M1/junit-platform-commons-1.11.0-M1.jar:/home/runner/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/runner/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.11.0-M1/junit-jupiter-params-5.11.0-M1.jar:/home/runner/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.11.0-M1/junit-jupiter-engine-5.11.0-M1.jar:/home/runner/.m2/repository/org/junit/platform/junit-platform-engine/1.11.0-M1/junit-platform-engine-1.11.0-M1.jar:"/>
+    <property name="java.vm.vendor" value="Eclipse Adoptium"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="user.timezone" value="Etc/UTC"/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/temurin-17-jdk-amd64/lib"/>
+    <property name="sun.java.command" value="/home/runner/work/playwright-with-features-example/playwright-with-features-example/target/surefire/surefirebooter-20240827082308616_3.jar /home/runner/work/playwright-with-features-example/playwright-with-features-example/target/surefire 2024-08-27T08-23-08_459-jvmRun1 surefire-20240827082308616_1tmp surefire_0-20240827082308616_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/home/runner/work/playwright-with-features-example/playwright-with-features-example/target/test-classes:/home/runner/work/playwright-with-features-example/playwright-with-features-example/target/classes:/home/runner/.m2/repository/com/microsoft/playwright/playwright/1.42.0/playwright-1.42.0.jar:/home/runner/.m2/repository/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar:/home/runner/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/runner/.m2/repository/com/microsoft/playwright/driver/1.42.0/driver-1.42.0.jar:/home/runner/.m2/repository/com/microsoft/playwright/driver-bundle/1.42.0/driver-bundle-1.42.0.jar:/home/runner/.m2/repository/org/junit/jupiter/junit-jupiter/5.11.0-M1/junit-jupiter-5.11.0-M1.jar:/home/runner/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.11.0-M1/junit-jupiter-api-5.11.0-M1.jar:/home/runner/.m2/repository/org/junit/platform/junit-platform-commons/1.11.0-M1/junit-platform-commons-1.11.0-M1.jar:/home/runner/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/runner/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.11.0-M1/junit-jupiter-params-5.11.0-M1.jar:/home/runner/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.11.0-M1/junit-jupiter-engine-5.11.0-M1.jar:/home/runner/.m2/repository/org/junit/platform/junit-platform-engine/1.11.0-M1/junit-platform-engine-1.11.0-M1.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/runner"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2024-07-16"/>
+    <property name="java.home" value="/usr/lib/jvm/temurin-17-jdk-amd64"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/home/runner/work/playwright-with-features-example/playwright-with-features-example"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="/home/runner/work/playwright-with-features-example/playwright-with-features-example/target/surefire/surefirebooter-20240827082308616_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="17.0.12+7"/>
+    <property name="user.name" value="runner"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="6.5.0-1025-azure"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Temurin-17.0.12+7"/>
+    <property name="localRepository" value="/home/runner/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="17.0.12"/>
+    <property name="user.dir" value="/home/runner/work/playwright-with-features-example/playwright-with-features-example"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Eclipse Adoptium"/>
+    <property name="java.vm.version" value="17.0.12+7"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="61.0"/>
+  </properties>
+  <testcase name="dropDownBar(String, String)[2]" classname="Navigation" time="1.032">
+    <error message="Error {&#10;  message=&apos;Error: strict mode violation: getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName(&quot;Java&quot;)) resolved to 3 elements:&#10;    1) &lt;a href=&quot;/java/&quot; target=&quot;_self&quot; class=&quot;dropdown__li…&gt;Java&lt;/a&gt; aka getByLabel(&quot;Main&quot;, new Page.GetByLabelOptions().setExact(true)).getByRole(AriaRole.LINK, new Locator.GetByRoleOptions().setName(&quot;Java&quot;))&#10;    2) &lt;a href=&quot;https://playwright.dev/docs/intro&quot;&gt;JavaScript&lt;/a&gt; aka getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName(&quot;JavaScript&quot;))&#10;    3) &lt;a href=&quot;https://playwright.dev/java/docs/intro&quot;&gt;Java&lt;/a&gt; aka locator(&quot;[id=\&quot;__docusaurus_skipToContent_fallback\&quot;]&quot;).getByRole(AriaRole.LINK, new Locator.GetByRoleOptions().setName(&quot;Java&quot;).setExact(true))&#10;&#10;  name=&apos;Error&#10;  stack=&apos;Error: Error: strict mode violation: getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName(&quot;Java&quot;)) resolved to 3 elements:&#10;    1) &lt;a href=&quot;/java/&quot; target=&quot;_self&quot; class=&quot;dropdown__li…&gt;Java&lt;/a&gt; aka getByLabel(&quot;Main&quot;, new Page.GetByLabelOptions().setExact(true)).getByRole(AriaRole.LINK, new Locator.GetByRoleOptions().setName(&quot;Java&quot;))&#10;    2) &lt;a href=&quot;https://playwright.dev/docs/intro&quot;&gt;JavaScript&lt;/a&gt; aka getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName(&quot;JavaScript&quot;))&#10;    3) &lt;a href=&quot;https://playwright.dev/java/docs/intro&quot;&gt;Java&lt;/a&gt; aka locator(&quot;[id=\&quot;__docusaurus_skipToContent_fallback\&quot;]&quot;).getByRole(AriaRole.LINK, new Locator.GetByRoleOptions().setName(&quot;Java&quot;).setExact(true))&#10;&#10;    at CRExecutionContext.evaluateWithArguments (/tmp/playwright-java-15479304313226273932/package/lib/server/chromium/crExecutionContext.js:92:33)&#10;    at async LongStandingScope._race (/tmp/playwright-java-15479304313226273932/package/lib/utils/manualPromise.js:96:14)&#10;    at async evaluateExpression (/tmp/playwright-java-15479304313226273932/package/lib/server/javascript.js:241:12)&#10;    at async /tmp/playwright-java-15479304313226273932/package/lib/server/frames.js:942:22&#10;    at async Frame.retryWithProgressAndTimeouts (/tmp/playwright-java-15479304313226273932/package/lib/server/frames.js:912:24)&#10;    at async /tmp/playwright-java-15479304313226273932/package/lib/server/frames.js:997:29&#10;    at async ProgressController.run (/tmp/playwright-java-15479304313226273932/package/lib/server/progress.js:82:22)&#10;    at async FrameDispatcher.click (/tmp/playwright-java-15479304313226273932/package/lib/server/dispatchers/frameDispatcher.js:158:12)&#10;    at async LongStandingScope._race (/tmp/playwright-java-15479304313226273932/package/lib/utils/manualPromise.js:96:14)&#10;    at async FrameDispatcher._handleCommand (/tmp/playwright-java-15479304313226273932/package/lib/server/dispatchers/dispatcher.js:96:14)&#10;}&#10;Call log:&#10;- waiting for getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName(&quot;Java&quot;))&#10;" type="com.microsoft.playwright.PlaywrightException"><![CDATA[com.microsoft.playwright.PlaywrightException: 
+Error {
+  message='Error: strict mode violation: getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("Java")) resolved to 3 elements:
+    1) <a href="/java/" target="_self" class="dropdown__li…>Java</a> aka getByLabel("Main", new Page.GetByLabelOptions().setExact(true)).getByRole(AriaRole.LINK, new Locator.GetByRoleOptions().setName("Java"))
+    2) <a href="https://playwright.dev/docs/intro">JavaScript</a> aka getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("JavaScript"))
+    3) <a href="https://playwright.dev/java/docs/intro">Java</a> aka locator("[id=\"__docusaurus_skipToContent_fallback\"]").getByRole(AriaRole.LINK, new Locator.GetByRoleOptions().setName("Java").setExact(true))
+
+  name='Error
+  stack='Error: Error: strict mode violation: getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("Java")) resolved to 3 elements:
+    1) <a href="/java/" target="_self" class="dropdown__li…>Java</a> aka getByLabel("Main", new Page.GetByLabelOptions().setExact(true)).getByRole(AriaRole.LINK, new Locator.GetByRoleOptions().setName("Java"))
+    2) <a href="https://playwright.dev/docs/intro">JavaScript</a> aka getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("JavaScript"))
+    3) <a href="https://playwright.dev/java/docs/intro">Java</a> aka locator("[id=\"__docusaurus_skipToContent_fallback\"]").getByRole(AriaRole.LINK, new Locator.GetByRoleOptions().setName("Java").setExact(true))
+
+    at CRExecutionContext.evaluateWithArguments (/tmp/playwright-java-15479304313226273932/package/lib/server/chromium/crExecutionContext.js:92:33)
+    at async LongStandingScope._race (/tmp/playwright-java-15479304313226273932/package/lib/utils/manualPromise.js:96:14)
+    at async evaluateExpression (/tmp/playwright-java-15479304313226273932/package/lib/server/javascript.js:241:12)
+    at async /tmp/playwright-java-15479304313226273932/package/lib/server/frames.js:942:22
+    at async Frame.retryWithProgressAndTimeouts (/tmp/playwright-java-15479304313226273932/package/lib/server/frames.js:912:24)
+    at async /tmp/playwright-java-15479304313226273932/package/lib/server/frames.js:997:29
+    at async ProgressController.run (/tmp/playwright-java-15479304313226273932/package/lib/server/progress.js:82:22)
+    at async FrameDispatcher.click (/tmp/playwright-java-15479304313226273932/package/lib/server/dispatchers/frameDispatcher.js:158:12)
+    at async LongStandingScope._race (/tmp/playwright-java-15479304313226273932/package/lib/utils/manualPromise.js:96:14)
+    at async FrameDispatcher._handleCommand (/tmp/playwright-java-15479304313226273932/package/lib/server/dispatchers/dispatcher.js:96:14)
+}
+Call log:
+- waiting for getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("Java"))
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:54)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.clickImpl(FrameImpl.java:252)
+	at com.microsoft.playwright.impl.FrameImpl.lambda$click$8(FrameImpl.java:243)
+	at com.microsoft.playwright.impl.LoggingSupport.lambda$withLogging$0(LoggingSupport.java:36)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:35)
+	at com.microsoft.playwright.impl.FrameImpl.click(FrameImpl.java:243)
+	at com.microsoft.playwright.impl.LocatorImpl.click(LocatorImpl.java:156)
+	at com.microsoft.playwright.Locator.click(Locator.java:2387)
+	at NavigationHeader.clickLinkByRole(NavigationHeader.java:21)
+	at Navigation.dropDownBar(Navigation.java:37)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+Caused by: com.microsoft.playwright.impl.DriverException: Error {
+  message='Error: strict mode violation: getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("Java")) resolved to 3 elements:
+    1) <a href="/java/" target="_self" class="dropdown__li…>Java</a> aka getByLabel("Main", new Page.GetByLabelOptions().setExact(true)).getByRole(AriaRole.LINK, new Locator.GetByRoleOptions().setName("Java"))
+    2) <a href="https://playwright.dev/docs/intro">JavaScript</a> aka getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("JavaScript"))
+    3) <a href="https://playwright.dev/java/docs/intro">Java</a> aka locator("[id=\"__docusaurus_skipToContent_fallback\"]").getByRole(AriaRole.LINK, new Locator.GetByRoleOptions().setName("Java").setExact(true))
+
+  name='Error
+  stack='Error: Error: strict mode violation: getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("Java")) resolved to 3 elements:
+    1) <a href="/java/" target="_self" class="dropdown__li…>Java</a> aka getByLabel("Main", new Page.GetByLabelOptions().setExact(true)).getByRole(AriaRole.LINK, new Locator.GetByRoleOptions().setName("Java"))
+    2) <a href="https://playwright.dev/docs/intro">JavaScript</a> aka getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("JavaScript"))
+    3) <a href="https://playwright.dev/java/docs/intro">Java</a> aka locator("[id=\"__docusaurus_skipToContent_fallback\"]").getByRole(AriaRole.LINK, new Locator.GetByRoleOptions().setName("Java").setExact(true))
+
+    at CRExecutionContext.evaluateWithArguments (/tmp/playwright-java-15479304313226273932/package/lib/server/chromium/crExecutionContext.js:92:33)
+    at async LongStandingScope._race (/tmp/playwright-java-15479304313226273932/package/lib/utils/manualPromise.js:96:14)
+    at async evaluateExpression (/tmp/playwright-java-15479304313226273932/package/lib/server/javascript.js:241:12)
+    at async /tmp/playwright-java-15479304313226273932/package/lib/server/frames.js:942:22
+    at async Frame.retryWithProgressAndTimeouts (/tmp/playwright-java-15479304313226273932/package/lib/server/frames.js:912:24)
+    at async /tmp/playwright-java-15479304313226273932/package/lib/server/frames.js:997:29
+    at async ProgressController.run (/tmp/playwright-java-15479304313226273932/package/lib/server/progress.js:82:22)
+    at async FrameDispatcher.click (/tmp/playwright-java-15479304313226273932/package/lib/server/dispatchers/frameDispatcher.js:158:12)
+    at async LongStandingScope._race (/tmp/playwright-java-15479304313226273932/package/lib/utils/manualPromise.js:96:14)
+    at async FrameDispatcher._handleCommand (/tmp/playwright-java-15479304313226273932/package/lib/server/dispatchers/dispatcher.js:96:14)
+}
+Call log:
+- waiting for getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("Java"))
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:259)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 49 more
+]]></error>
+  </testcase>
+  <testcase name="dropDownBar(String, String)[3]" classname="Navigation" time="2.167"/>
+  <testcase name="guidesABCSort" classname="Sidebar" time="2.424">
+    <error message="Playwright connection closed" type="com.microsoft.playwright.PlaywrightException"><![CDATA[com.microsoft.playwright.PlaywrightException: Playwright connection closed
+	at com.microsoft.playwright.impl.PipeTransport.poll(PipeTransport.java:65)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:205)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:101)
+	at com.microsoft.playwright.impl.ElementHandleImpl.lambda$innerText$15(ElementHandleImpl.java:234)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.ElementHandleImpl.innerText(ElementHandleImpl.java:233)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.tryAdvance(ArrayList.java:1602)
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:527)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+	at Sidebar.guidesABCSort(Sidebar.java:23)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinTask.awaitDone(ForkJoinTask.java:436)
+	at java.base/java.util.concurrent.ForkJoinTask.join(ForkJoinTask.java:670)
+	at java.base/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+	Suppressed: com.microsoft.playwright.PlaywrightException: Playwright connection closed
+		at com.microsoft.playwright.impl.PipeTransport.send(PipeTransport.java:50)
+		at com.microsoft.playwright.impl.Connection.internalSendMessage(Connection.java:168)
+		at com.microsoft.playwright.impl.Connection.sendMessageAsync(Connection.java:134)
+		at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+		at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+		at com.microsoft.playwright.impl.TracingImpl.stopChunkImpl(TracingImpl.java:58)
+		at com.microsoft.playwright.impl.TracingImpl.stop(TracingImpl.java:124)
+		at Base.closeContext(Base.java:45)
+		... 11 more
+]]></error>
+  </testcase>
+  <testcase name="checkTitlesGettingStarted" classname="Sidebar" time="0.002">
+    <error message="Playwright connection closed" type="com.microsoft.playwright.PlaywrightException"><![CDATA[com.microsoft.playwright.PlaywrightException: Playwright connection closed
+	at com.microsoft.playwright.impl.PipeTransport.send(PipeTransport.java:50)
+	at com.microsoft.playwright.impl.Connection.internalSendMessage(Connection.java:168)
+	at com.microsoft.playwright.impl.Connection.sendMessageAsync(Connection.java:134)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.BrowserImpl.newContextImpl(BrowserImpl.java:215)
+	at com.microsoft.playwright.impl.BrowserImpl.lambda$newContext$1(BrowserImpl.java:120)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.BrowserImpl.newContext(BrowserImpl.java:120)
+	at com.microsoft.playwright.impl.BrowserImpl.newContext(BrowserImpl.java:37)
+	at com.microsoft.playwright.Browser.newContext(Browser.java:1254)
+	at Base.createContextAndPage(Base.java:32)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinTask.awaitDone(ForkJoinTask.java:436)
+	at java.base/java.util.concurrent.ForkJoinTask.join(ForkJoinTask.java:670)
+	at java.base/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+	Suppressed: java.lang.NullPointerException: Cannot invoke "com.microsoft.playwright.BrowserContext.tracing()" because "this.context" is null
+		at Base.closeContext(Base.java:45)
+		... 11 more
+]]></error>
+  </testcase>
+</testsuite>
