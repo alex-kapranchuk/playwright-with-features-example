@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: Actions
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 1.590 s <<< FAILURE! -- in Actions
-Actions.hoverActions -- Time elapsed: 0.513 s <<< FAILURE!
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 1.544 s <<< FAILURE! -- in Actions
+Actions.hoverActions -- Time elapsed: 0.499 s <<< FAILURE!
 org.opentest4j.AssertionFailedError: The color of the text of the element button[aria-label='Search'] did not change after hovering the cursor ==> expected: not equal but was: <rgb(102, 108, 119)>
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)

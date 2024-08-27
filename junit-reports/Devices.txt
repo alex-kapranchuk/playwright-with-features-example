@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: Devices
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.153 s <<< FAILURE! -- in Devices
-Devices -- Time elapsed: 1.153 s <<< ERROR!
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.864 s <<< FAILURE! -- in Devices
+Devices -- Time elapsed: 0.864 s <<< ERROR!
 com.microsoft.playwright.PlaywrightException: 
 Error {
   message='
@@ -78,16 +78,16 @@ Error {
 ║     libGLESv2.so.2                                   ║
 ║     libx264.so                                       ║
 ╚══════════════════════════════════════════════════════╝
-    at validateDependenciesLinux (/tmp/playwright-java-16328742539313862460/package/lib/server/registry/dependencies.js:216:9)
+    at validateDependenciesLinux (/tmp/playwright-java-10903417830961600950/package/lib/server/registry/dependencies.js:216:9)
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-    at async Registry._validateHostRequirements (/tmp/playwright-java-16328742539313862460/package/lib/server/registry/index.js:627:43)
-    at async Registry._validateHostRequirementsForExecutableIfNeeded (/tmp/playwright-java-16328742539313862460/package/lib/server/registry/index.js:725:7)
-    at async Registry.validateHostRequirementsForExecutablesIfNeeded (/tmp/playwright-java-16328742539313862460/package/lib/server/registry/index.js:714:43)
-    at async WebKit._launchProcess (/tmp/playwright-java-16328742539313862460/package/lib/server/browserType.js:167:7)
-    at async WebKit._innerLaunch (/tmp/playwright-java-16328742539313862460/package/lib/server/browserType.js:103:9)
-    at async WebKit._innerLaunchWithRetries (/tmp/playwright-java-16328742539313862460/package/lib/server/browserType.js:84:14)
-    at async ProgressController.run (/tmp/playwright-java-16328742539313862460/package/lib/server/progress.js:82:22)
-    at async WebKit.launch (/tmp/playwright-java-16328742539313862460/package/lib/server/browserType.js:61:21)
+    at async Registry._validateHostRequirements (/tmp/playwright-java-10903417830961600950/package/lib/server/registry/index.js:627:43)
+    at async Registry._validateHostRequirementsForExecutableIfNeeded (/tmp/playwright-java-10903417830961600950/package/lib/server/registry/index.js:725:7)
+    at async Registry.validateHostRequirementsForExecutablesIfNeeded (/tmp/playwright-java-10903417830961600950/package/lib/server/registry/index.js:714:43)
+    at async WebKit._launchProcess (/tmp/playwright-java-10903417830961600950/package/lib/server/browserType.js:167:7)
+    at async WebKit._innerLaunch (/tmp/playwright-java-10903417830961600950/package/lib/server/browserType.js:103:9)
+    at async WebKit._innerLaunchWithRetries (/tmp/playwright-java-10903417830961600950/package/lib/server/browserType.js:84:14)
+    at async ProgressController.run (/tmp/playwright-java-10903417830961600950/package/lib/server/progress.js:82:22)
+    at async WebKit.launch (/tmp/playwright-java-10903417830961600950/package/lib/server/browserType.js:61:21)
 }
 	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:54)
 	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
@@ -181,16 +181,16 @@ Caused by: com.microsoft.playwright.impl.DriverException: Error {
 ║     libGLESv2.so.2                                   ║
 ║     libx264.so                                       ║
 ╚══════════════════════════════════════════════════════╝
-    at validateDependenciesLinux (/tmp/playwright-java-16328742539313862460/package/lib/server/registry/dependencies.js:216:9)
+    at validateDependenciesLinux (/tmp/playwright-java-10903417830961600950/package/lib/server/registry/dependencies.js:216:9)
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-    at async Registry._validateHostRequirements (/tmp/playwright-java-16328742539313862460/package/lib/server/registry/index.js:627:43)
-    at async Registry._validateHostRequirementsForExecutableIfNeeded (/tmp/playwright-java-16328742539313862460/package/lib/server/registry/index.js:725:7)
-    at async Registry.validateHostRequirementsForExecutablesIfNeeded (/tmp/playwright-java-16328742539313862460/package/lib/server/registry/index.js:714:43)
-    at async WebKit._launchProcess (/tmp/playwright-java-16328742539313862460/package/lib/server/browserType.js:167:7)
-    at async WebKit._innerLaunch (/tmp/playwright-java-16328742539313862460/package/lib/server/browserType.js:103:9)
-    at async WebKit._innerLaunchWithRetries (/tmp/playwright-java-16328742539313862460/package/lib/server/browserType.js:84:14)
-    at async ProgressController.run (/tmp/playwright-java-16328742539313862460/package/lib/server/progress.js:82:22)
-    at async WebKit.launch (/tmp/playwright-java-16328742539313862460/package/lib/server/browserType.js:61:21)
+    at async Registry._validateHostRequirements (/tmp/playwright-java-10903417830961600950/package/lib/server/registry/index.js:627:43)
+    at async Registry._validateHostRequirementsForExecutableIfNeeded (/tmp/playwright-java-10903417830961600950/package/lib/server/registry/index.js:725:7)
+    at async Registry.validateHostRequirementsForExecutablesIfNeeded (/tmp/playwright-java-10903417830961600950/package/lib/server/registry/index.js:714:43)
+    at async WebKit._launchProcess (/tmp/playwright-java-10903417830961600950/package/lib/server/browserType.js:167:7)
+    at async WebKit._innerLaunch (/tmp/playwright-java-10903417830961600950/package/lib/server/browserType.js:103:9)
+    at async WebKit._innerLaunchWithRetries (/tmp/playwright-java-10903417830961600950/package/lib/server/browserType.js:84:14)
+    at async ProgressController.run (/tmp/playwright-java-10903417830961600950/package/lib/server/progress.js:82:22)
+    at async WebKit.launch (/tmp/playwright-java-10903417830961600950/package/lib/server/browserType.js:61:21)
 }
 	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:259)
 	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
