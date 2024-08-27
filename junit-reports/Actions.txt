@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: Actions
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 1.607 s <<< FAILURE! -- in Actions
-Actions.hoverActions -- Time elapsed: 0.522 s <<< FAILURE!
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 1.593 s <<< FAILURE! -- in Actions
+Actions.hoverActions -- Time elapsed: 0.543 s <<< FAILURE!
 org.opentest4j.AssertionFailedError: The color of the text of the element button[aria-label='Search'] did not change after hovering the cursor ==> expected: not equal but was: <rgb(102, 108, 119)>
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -14,10 +14,6 @@ org.opentest4j.AssertionFailedError: The color of the text of the element button
 	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
 	at Actions.hoverActions(Actions.java:29)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
-	at java.base/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
-	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
-	at java.base/java.util.concurrent.ForkJoinTask.awaitDone(ForkJoinTask.java:436)
-	at java.base/java.util.concurrent.ForkJoinTask.join(ForkJoinTask.java:670)
 	at java.base/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
 	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
 	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
