@@ -39,7 +39,7 @@ jobs:
         uses: scacap/action-surefire-report@v1
         if: always()
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.SECRETTOKEN }}
           report_paths: '**/surefire-reports/TEST-*.xml'
 
       - name: Deploy to GitHub Pages
