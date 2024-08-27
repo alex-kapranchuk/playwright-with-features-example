@@ -8,6 +8,8 @@ on:
 
 permissions:
   contents: write
+  actions: write
+  checks: write
 
 jobs:
   build:
@@ -39,7 +41,7 @@ jobs:
         report_paths: '**/surefire-reports/TEST-*.xml'
 
     
-    - name: Generate Surefire Report
+    - name: Generate HTML Surefire Report
       run: mvn surefire-report:report-only
       
     - name: Deploy to GitHub Pages
