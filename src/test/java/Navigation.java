@@ -1,5 +1,5 @@
 import com.microsoft.playwright.options.AriaRole;
-import org.junit.jupiter.api.Disabled;
+import com.microsoft.playwright.options.LoadState;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -9,8 +9,10 @@ public class Navigation extends Base {
     @Test
     void navigationBar() {
         NavigationHeader navigationHeader = new NavigationHeader(page);
+        page.waitForLoadState(LoadState.NETWORKIDLE);
 
-        navigationHeader.navigateTo()
+        navigationHeader
+                .navigateTo()
                 .clickLinkByRole(AriaRole.LINK, "Docs", false)
                 .clickLinkByRole(AriaRole.HEADING, "Installation", false)
                 .assertHeaderTextContains("h1", "Installation")
@@ -21,7 +23,6 @@ public class Navigation extends Base {
                 .clickLinkByLabel("Main", true);
     }
 
-    @Disabled
     @ParameterizedTest
     @CsvSource({
             "Python, Playwright for Python",
@@ -33,7 +34,11 @@ public class Navigation extends Base {
         NavigationHeader navigationHeader = new NavigationHeader(page);
 
         navigationHeader
-                .navigateTo()
+                .navigateTo();
+
+        page.waitForLoadState(LoadState.NETWORKIDLE);
+
+        navigationHeader
                 .clickLinkByRole(AriaRole.LINK, "API", true)
                 .hoverElement("a[role='button']")
                 .clickLinkByRole(AriaRole.LINK, name, false)

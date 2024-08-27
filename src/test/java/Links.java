@@ -1,11 +1,9 @@
 import com.microsoft.playwright.Page;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 public class Links extends Base {
 
-    @Disabled
     @Test
     public void handlingLinks() {
         NavigationHeader navigationHeader = new NavigationHeader(page);

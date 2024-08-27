@@ -18,7 +18,8 @@ public class NavigationHeader {
     }
 
     public NavigationHeader clickLinkByRole(AriaRole role, String name, boolean exact) {
-        page.getByRole(role, new Page.GetByRoleOptions().setName(name).setExact(exact)).click();
+        page.getByRole(role, new Page.GetByRoleOptions().setName(name).setExact(exact)).first().click();
+
         return this;
     }
 

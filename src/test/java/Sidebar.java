@@ -1,6 +1,5 @@
 import com.microsoft.playwright.ElementHandle;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -8,7 +7,7 @@ import java.util.stream.Collectors;
 
 public class Sidebar extends Base {
 
-    @Test
+        @Test
     void guidesABCSort() {
         DocsPage docsPage = new DocsPage(page);
         docsPage.navigateToDocsPage()
@@ -25,7 +24,7 @@ public class Sidebar extends Base {
 
         Assertions.assertEquals(listOfGuides, listOfGuides.stream().sorted().toList());
     }
-    @Disabled
+
     @Test
     void checkTitlesGettingStarted() {
         DocsPage docsPage = new DocsPage(page);

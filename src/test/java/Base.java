@@ -19,7 +19,7 @@ public class Base {
     static void launchBrowser() {
         playwright = Playwright.create();
         browser = playwright.chromium()
-                .launch(new BrowserType.LaunchOptions().setHeadless(true));//.setSlowMo(150));
+                .launch(new BrowserType.LaunchOptions().setHeadless(true).setSlowMo(50));
     }
 
     @AfterAll
@@ -44,6 +44,5 @@ public class Base {
     void closeContext() {
         context.tracing().stop(new Tracing.StopOptions()
                 .setPath(Paths.get("trace.zip")));
-        context.close();
     }
 }

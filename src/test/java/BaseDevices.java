@@ -17,8 +17,8 @@ public class BaseDevices {
     @BeforeAll
     static void launchBrowser() {
         playwright = Playwright.create();
-        browser = playwright.chromium()
-                .launch(new BrowserType.LaunchOptions().setHeadless(true));
+        browser = playwright.webkit()
+                .launch(new BrowserType.LaunchOptions().setHeadless(true).setSlowMo(100));
     }
 
     @AfterAll

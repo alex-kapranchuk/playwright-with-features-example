@@ -1,5 +1,4 @@
 import com.microsoft.playwright.Page;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.nio.file.Paths;
@@ -9,7 +8,6 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class Actions extends Base {
 
-    @Disabled
     @Test
     void hoverActions() {
         NavigationHeader navigationHeader = new NavigationHeader(page);

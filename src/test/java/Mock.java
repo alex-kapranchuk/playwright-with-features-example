@@ -14,8 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class Mock extends Base {
 
-    @Disabled
-    @Test
+     @Test
     public void mockData() {
         page.route("**/api/v1/fruits", route -> {
             route.fulfill(new Route.FulfillOptions()
@@ -27,8 +26,7 @@ public class Mock extends Base {
         assertTrue(page.waitForSelector("text=Coconut").isVisible());
     }
 
-    @Disabled
-    @Test
+     @Test
     public void addMockData() {
         page.route("**/api/v1/fruits", route -> {
             APIResponse response = route.fetch();

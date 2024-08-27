@@ -3,8 +3,8 @@ import com.microsoft.playwright.junit.Options;
 import com.microsoft.playwright.junit.OptionsFactory;
 import com.microsoft.playwright.junit.UsePlaywright;
 import com.microsoft.playwright.options.AriaRole;
+import com.microsoft.playwright.options.LoadState;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.parallel.Execution;
 import org.junit.jupiter.api.parallel.ExecutionMode;
@@ -15,7 +15,6 @@ import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertTha
 @UsePlaywright(ParallelAndIsolation.CustomOptions.class)
 public class ParallelAndIsolation {
 
-    @Disabled
     @Test
     public void goToParallel(Page page) {
         NavigationHeader navigationHeader = new NavigationHeader(page);
@@ -32,8 +31,7 @@ public class ParallelAndIsolation {
         assertThat(page.locator("#running-tests-in-parallel")).containsText("Running Tests in Parallel");
     }
 
-    @Disabled
-    @Test
+      @Test
     public void twoContexts() {
         try (Playwright playwright = Playwright.create()) {
             BrowserType firefox = playwright.firefox();
@@ -44,6 +42,7 @@ public class ParallelAndIsolation {
             Page userPage = userContext.newPage();
             userPage.navigate("http://playwright.dev");
 
+            userPage.waitForLoadState(LoadState.NETWORKIDLE);
             Assertions.assertEquals("Fast and reliable end-to-end testing for modern web apps | Playwright", userPage.title());
 
             BrowserContext adminContext = browser.newContext();
@@ -59,7 +58,7 @@ public class ParallelAndIsolation {
         @Override
         public Options getOptions() {
             return new Options()
-                    .setHeadless(false);
+                    .setHeadless(true);
         }
     }
 }

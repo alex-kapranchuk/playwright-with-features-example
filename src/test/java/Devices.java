@@ -1,10 +1,9 @@
 import com.microsoft.playwright.options.AriaRole;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 public class Devices extends BaseDevices {
 
-    @Disabled
+
     @Test
     public void emulationDevices() {
         NavigationHeader navigationHeader = new NavigationHeader(page);
@@ -19,9 +18,9 @@ public class Devices extends BaseDevices {
                 .clickLinkByLabel("Close navigation bar", false);
 
         searchField.clickLinkByLabel(SEARCH)
-                .fillByPlaceholder(SEARCH_DOCS, "emulation")
+                .fillByPlaceholder(SEARCH_DOCS, "emulation devices")
                 .pressByPlaceholder(SEARCH_DOCS, "ArrowDown")
-                .pressByPlaceholder(SEARCH_DOCS, "ArrowDown")
+//                .pressByPlaceholder(SEARCH_DOCS, "ArrowDown")
                 .pressByPlaceholder(SEARCH_DOCS, "Enter")
                 .expectedText("#devices", "Devices");
 

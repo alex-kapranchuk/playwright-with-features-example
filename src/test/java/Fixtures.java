@@ -12,7 +12,6 @@ import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertTha
 @UsePlaywright(Fixtures.CustomOptions.class)
 public class Fixtures {
 
-    @Disabled
     @Test
     public void handlingLinks(Page page) {
         NavigationHeader navigationHeader = new NavigationHeader(page);
@@ -22,13 +21,10 @@ public class Fixtures {
         assertThat(page.getByRole(AriaRole.MAIN)).containsText("Let’s build from here");
 
         navigationHeader.
-                clickLinkByRole(AriaRole.BUTTON, "Search or jump to...", false)
-                .fillByRole(AriaRole.COMBOBOX, "Search", "")
-                .clickLinkByText("Copilot Learn More")
-                .clickLinkByRole(AriaRole.LINK, "Get started with Copilot", false);
+                clickLinkByRole(AriaRole.LINK, "Start a free enterprise trial", false);
 
-        assertThat(page.getByTestId("Grid-:R5b:").locator("h2")).containsText("Take flight with GitHub Copilot.");
-    }
+        assertThat(page.getByRole(AriaRole.MAIN)).containsText("Pick your trial plan");
+      }
 
     public static class CustomOptions implements OptionsFactory {
 

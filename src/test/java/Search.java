@@ -1,13 +1,12 @@
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.AriaRole;
-import org.junit.jupiter.api.Disabled;
+import com.microsoft.playwright.options.LoadState;
 import org.junit.jupiter.api.Test;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
 public class Search extends Base {
 
-    @Disabled
     @Test
     public void generalSearch() {
         NavigationHeader navigationHeader = new NavigationHeader(page);
@@ -27,7 +26,7 @@ public class Search extends Base {
                 .clickLinkByLabel(SEARCH);
 
         navigationHeader
-                .clickLinkByRole(AriaRole.LINK, "keyboard.down Keyboard Save", false);
+                .clickLinkByRole(AriaRole.LINK, "keyboard", false);
 
         searchField
                 .expectedText("#keyboard-down", "down")
@@ -37,7 +36,6 @@ public class Search extends Base {
         assertThat(page.getByPlaceholder(SEARCH_DOCS)).isHidden();
     }
 
-    @Disabled
     @Test
     public void favoriteSearch() {
         NavigationHeader navigationHeader = new NavigationHeader(page);
@@ -50,10 +48,10 @@ public class Search extends Base {
 
         searchField
                 .clickLinkByLabel(SEARCH)
-                .fillByPlaceholder(SEARCH_DOCS, "containsText")
+                .fillByPlaceholder(SEARCH_DOCS, "Actions")
                 .pressByPlaceholder(SEARCH_DOCS, "ArrowDown")
                 .pressByPlaceholder(SEARCH_DOCS, "Enter")
-                .expectedText("#assertions", "Assertions") // First search is not saved to the history
+                .expectedText("#introduction", "Introduction") // First search is not saved to the history
                 .clickLinkByLabel(SEARCH)
                 .fillByPlaceholder(SEARCH_DOCS, "Mock APIs")
                 .pressByPlaceholder(SEARCH_DOCS, "Enter")
@@ -62,19 +60,13 @@ public class Search extends Base {
                 .clickLinkByLocator("#docsearch-item-0", AriaRole.BUTTON, "Save this search")
                 .pressByPlaceholder(SEARCH_DOCS, "Escape");
 
-        navigationHeader
-                .navigateTo();
-
-        searchField
-                .clickLinkByLabel(SEARCH)
-                .clickLinkByLocator("#docsearch-item-0", AriaRole.LINK, "Mock APIs Remove this search")
-                .expectedText("h1", "Mock APIs");
-
         searchField
                 .clickLinkByLabel(SEARCH);
 
-        navigationHeader
-                .clickLinkByRole(AriaRole.BUTTON, "Remove this search from", false);
+        page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Remove this search from favorites")).click();
+
+        searchField.
+                expectedText("h1", "Mock APIs");
 
         assertThat(page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("Mock APIs Remove this search"))).isHidden();
     }
