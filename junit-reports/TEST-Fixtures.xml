@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="Fixtures" time="32.168" tests="2" errors="1" skipped="0" failures="1">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="Fixtures" time="32.02" tests="1" errors="1" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -12,7 +12,7 @@
     <property name="java.vm.specification.version" value="17"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/temurin-17-jdk-amd64/lib"/>
-    <property name="sun.java.command" value="/home/runner/work/playwright-with-features-example/playwright-with-features-example/target/surefire/surefirebooter-20240827082657476_3.jar /home/runner/work/playwright-with-features-example/playwright-with-features-example/target/surefire 2024-08-27T08-26-57_193-jvmRun1 surefire-20240827082657476_1tmp surefire_0-20240827082657476_2tmp"/>
+    <property name="sun.java.command" value="/home/runner/work/playwright-with-features-example/playwright-with-features-example/target/surefire/surefirebooter-20240827082920373_3.jar /home/runner/work/playwright-with-features-example/playwright-with-features-example/target/surefire 2024-08-27T08-29-20_024-jvmRun1 surefire-20240827082920373_1tmp surefire_0-20240827082920373_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/home/runner/work/playwright-with-features-example/playwright-with-features-example/target/test-classes:/home/runner/work/playwright-with-features-example/playwright-with-features-example/target/classes:/home/runner/.m2/repository/com/microsoft/playwright/playwright/1.42.0/playwright-1.42.0.jar:/home/runner/.m2/repository/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar:/home/runner/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/runner/.m2/repository/com/microsoft/playwright/driver/1.42.0/driver-1.42.0.jar:/home/runner/.m2/repository/com/microsoft/playwright/driver-bundle/1.42.0/driver-bundle-1.42.0.jar:/home/runner/.m2/repository/org/junit/jupiter/junit-jupiter/5.11.0-M1/junit-jupiter-5.11.0-M1.jar:/home/runner/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.11.0-M1/junit-jupiter-api-5.11.0-M1.jar:/home/runner/.m2/repository/org/junit/platform/junit-platform-commons/1.11.0-M1/junit-platform-commons-1.11.0-M1.jar:/home/runner/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/runner/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.11.0-M1/junit-jupiter-params-5.11.0-M1.jar:/home/runner/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.11.0-M1/junit-jupiter-engine-5.11.0-M1.jar:/home/runner/.m2/repository/org/junit/platform/junit-platform-engine/1.11.0-M1/junit-platform-engine-1.11.0-M1.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -27,7 +27,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="/home/runner/work/playwright-with-features-example/playwright-with-features-example/target/surefire/surefirebooter-20240827082657476_3.jar"/>
+    <property name="surefire.real.class.path" value="/home/runner/work/playwright-with-features-example/playwright-with-features-example/target/surefire/surefirebooter-20240827082920373_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.12+7"/>
     <property name="user.name" value="runner"/>
@@ -52,45 +52,17 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="favoriteSearch" classname="Search" time="5.787">
-    <failure message="Locator expected to contain text: Assertions&#10;Received: null&#10;&#10;Call log:&#10;Locator.expect with timeout 5000ms&#10;waiting for locator(&quot;#assertions&quot;)" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: 
-Locator expected to contain text: Assertions
-Received: null
-
-Call log:
-Locator.expect with timeout 5000ms
-waiting for locator("#assertions")
-	at com.microsoft.playwright.impl.AssertionsBase.expectImpl(AssertionsBase.java:73)
-	at com.microsoft.playwright.impl.AssertionsBase.expectImpl(AssertionsBase.java:50)
-	at com.microsoft.playwright.impl.AssertionsBase.expectImpl(AssertionsBase.java:41)
-	at com.microsoft.playwright.impl.LocatorAssertionsImpl.containsText(LocatorAssertionsImpl.java:46)
-	at com.microsoft.playwright.assertions.LocatorAssertions.containsText(LocatorAssertions.java:768)
-	at SearchField.expectedText(SearchField.java:38)
-	at Search.favoriteSearch(Search.java:53)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
-	at java.base/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
-	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
-	at java.base/java.util.concurrent.ForkJoinTask.awaitDone(ForkJoinTask.java:436)
-	at java.base/java.util.concurrent.ForkJoinTask.join(ForkJoinTask.java:670)
-	at java.base/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
-	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
-	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
-	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
-	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
-	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
-]]></failure>
-  </testcase>
-  <testcase name="handlingLinks(Page)" classname="Fixtures" time="32.137">
-    <error message="Error {&#10;  message=&apos;Timeout 30000ms exceeded.&#10;  name=&apos;TimeoutError&#10;  stack=&apos;TimeoutError: Timeout 30000ms exceeded.&#10;    at ProgressController.run (/tmp/playwright-java-17306950920858329419/package/lib/server/progress.js:78:26)&#10;    at Frame.click (/tmp/playwright-java-17306950920858329419/package/lib/server/frames.js:996:23)&#10;    at FrameDispatcher.click (/tmp/playwright-java-17306950920858329419/package/lib/server/dispatchers/frameDispatcher.js:158:30)&#10;    at FrameDispatcher._handleCommand (/tmp/playwright-java-17306950920858329419/package/lib/server/dispatchers/dispatcher.js:94:40)&#10;    at DispatcherConnection.dispatch (/tmp/playwright-java-17306950920858329419/package/lib/server/dispatchers/dispatcher.js:365:39)&#10;}&#10;Call log:&#10;- waiting for getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName(&quot;Search or jump to...&quot;))&#10;" type="com.microsoft.playwright.TimeoutError"><![CDATA[com.microsoft.playwright.TimeoutError: 
+  <testcase name="handlingLinks(Page)" classname="Fixtures" time="31.991">
+    <error message="Error {&#10;  message=&apos;Timeout 30000ms exceeded.&#10;  name=&apos;TimeoutError&#10;  stack=&apos;TimeoutError: Timeout 30000ms exceeded.&#10;    at ProgressController.run (/tmp/playwright-java-16434841733888360444/package/lib/server/progress.js:78:26)&#10;    at Frame.click (/tmp/playwright-java-16434841733888360444/package/lib/server/frames.js:996:23)&#10;    at FrameDispatcher.click (/tmp/playwright-java-16434841733888360444/package/lib/server/dispatchers/frameDispatcher.js:158:30)&#10;    at FrameDispatcher._handleCommand (/tmp/playwright-java-16434841733888360444/package/lib/server/dispatchers/dispatcher.js:94:40)&#10;    at DispatcherConnection.dispatch (/tmp/playwright-java-16434841733888360444/package/lib/server/dispatchers/dispatcher.js:365:39)&#10;}&#10;Call log:&#10;- waiting for getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName(&quot;Search or jump to...&quot;))&#10;" type="com.microsoft.playwright.TimeoutError"><![CDATA[com.microsoft.playwright.TimeoutError: 
 Error {
   message='Timeout 30000ms exceeded.
   name='TimeoutError
   stack='TimeoutError: Timeout 30000ms exceeded.
-    at ProgressController.run (/tmp/playwright-java-17306950920858329419/package/lib/server/progress.js:78:26)
-    at Frame.click (/tmp/playwright-java-17306950920858329419/package/lib/server/frames.js:996:23)
-    at FrameDispatcher.click (/tmp/playwright-java-17306950920858329419/package/lib/server/dispatchers/frameDispatcher.js:158:30)
-    at FrameDispatcher._handleCommand (/tmp/playwright-java-17306950920858329419/package/lib/server/dispatchers/dispatcher.js:94:40)
-    at DispatcherConnection.dispatch (/tmp/playwright-java-17306950920858329419/package/lib/server/dispatchers/dispatcher.js:365:39)
+    at ProgressController.run (/tmp/playwright-java-16434841733888360444/package/lib/server/progress.js:78:26)
+    at Frame.click (/tmp/playwright-java-16434841733888360444/package/lib/server/frames.js:996:23)
+    at FrameDispatcher.click (/tmp/playwright-java-16434841733888360444/package/lib/server/dispatchers/frameDispatcher.js:158:30)
+    at FrameDispatcher._handleCommand (/tmp/playwright-java-16434841733888360444/package/lib/server/dispatchers/dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (/tmp/playwright-java-16434841733888360444/package/lib/server/dispatchers/dispatcher.js:365:39)
 }
 Call log:
 - waiting for getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Search or jump to..."))
@@ -121,11 +93,11 @@ Caused by: com.microsoft.playwright.TimeoutError: Error {
   message='Timeout 30000ms exceeded.
   name='TimeoutError
   stack='TimeoutError: Timeout 30000ms exceeded.
-    at ProgressController.run (/tmp/playwright-java-17306950920858329419/package/lib/server/progress.js:78:26)
-    at Frame.click (/tmp/playwright-java-17306950920858329419/package/lib/server/frames.js:996:23)
-    at FrameDispatcher.click (/tmp/playwright-java-17306950920858329419/package/lib/server/dispatchers/frameDispatcher.js:158:30)
-    at FrameDispatcher._handleCommand (/tmp/playwright-java-17306950920858329419/package/lib/server/dispatchers/dispatcher.js:94:40)
-    at DispatcherConnection.dispatch (/tmp/playwright-java-17306950920858329419/package/lib/server/dispatchers/dispatcher.js:365:39)
+    at ProgressController.run (/tmp/playwright-java-16434841733888360444/package/lib/server/progress.js:78:26)
+    at Frame.click (/tmp/playwright-java-16434841733888360444/package/lib/server/frames.js:996:23)
+    at FrameDispatcher.click (/tmp/playwright-java-16434841733888360444/package/lib/server/dispatchers/frameDispatcher.js:158:30)
+    at FrameDispatcher._handleCommand (/tmp/playwright-java-16434841733888360444/package/lib/server/dispatchers/dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (/tmp/playwright-java-16434841733888360444/package/lib/server/dispatchers/dispatcher.js:365:39)
 }
 Call log:
 - waiting for getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Search or jump to..."))

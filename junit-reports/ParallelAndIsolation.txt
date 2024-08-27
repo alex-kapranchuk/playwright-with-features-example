@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: ParallelAndIsolation
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 11.42 s <<< FAILURE! -- in ParallelAndIsolation
-ParallelAndIsolation.goToParallel(Page) -- Time elapsed: 6.727 s <<< ERROR!
+Tests run: 3, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 12.61 s <<< FAILURE! -- in ParallelAndIsolation
+ParallelAndIsolation.goToParallel(Page) -- Time elapsed: 7.632 s <<< ERROR!
 org.junit.jupiter.api.extension.ParameterResolutionException: 
 Failed to resolve parameter [com.microsoft.playwright.Page arg0] in method [public void ParallelAndIsolation.goToParallel(com.microsoft.playwright.Page)]: Error {
   message='Target page, context or browser has been closed
@@ -24,13 +24,13 @@ Browser logs:
 ║                                                                                                ║
 ║ <3 Playwright Team                                                                             ║
 ╚════════════════════════════════════════════════════════════════════════════════════════════════╝
-    at DispatcherConnection.dispatch (/tmp/playwright-java-17306950920858329419/package/lib/server/dispatchers/dispatcher.js:379:15)
+    at DispatcherConnection.dispatch (/tmp/playwright-java-16434841733888360444/package/lib/server/dispatchers/dispatcher.js:379:15)
 }
 Call log:
-- <launching> /home/runner/.cache/ms-playwright/chromium-1105/chrome-linux/chrome --disable-field-trial-config --disable-background-networking --enable-features=NetworkService,NetworkServiceInProcess --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=ImprovedCookieControls,LazyFrameLoading,GlobalMediaControls,DestroyProfileOnBrowserClose,MediaRouter,DialMediaRouteProvider,AcceptCHFrame,AutoExpandDetailsElement,CertificateTransparencyComponentUpdater,AvoidUnnecessaryBeforeUnloadCheckSync,Translate,HttpsUpgrades,PaintHolding --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --enable-automation --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-K1WvU8 --remote-debugging-pipe --no-startup-window
-- <launched> pid=3212
-- [pid=3212][err] [3212:3212:0827/082704.783026:ERROR:ozone_platform_x11.cc(243)] Missing X server or $DISPLAY
-- [pid=3212][err] [3212:3212:0827/082704.783062:ERROR:env.cc(257)] The platform failed to initialize.  Exiting.
+- <launching> /home/runner/.cache/ms-playwright/chromium-1105/chrome-linux/chrome --disable-field-trial-config --disable-background-networking --enable-features=NetworkService,NetworkServiceInProcess --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=ImprovedCookieControls,LazyFrameLoading,GlobalMediaControls,DestroyProfileOnBrowserClose,MediaRouter,DialMediaRouteProvider,AcceptCHFrame,AutoExpandDetailsElement,CertificateTransparencyComponentUpdater,AvoidUnnecessaryBeforeUnloadCheckSync,Translate,HttpsUpgrades,PaintHolding --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --enable-automation --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-UxGtny --remote-debugging-pipe --no-startup-window
+- <launched> pid=3220
+- [pid=3220][err] [3220:3220:0827/082928.553812:ERROR:ozone_platform_x11.cc(243)] Missing X server or $DISPLAY
+- [pid=3220][err] [3220:3220:0827/082928.553848:ERROR:env.cc(257)] The platform failed to initialize.  Exiting.
 
 	at java.base/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
 	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
@@ -66,13 +66,13 @@ Browser logs:
 ║                                                                                                ║
 ║ <3 Playwright Team                                                                             ║
 ╚════════════════════════════════════════════════════════════════════════════════════════════════╝
-    at DispatcherConnection.dispatch (/tmp/playwright-java-17306950920858329419/package/lib/server/dispatchers/dispatcher.js:379:15)
+    at DispatcherConnection.dispatch (/tmp/playwright-java-16434841733888360444/package/lib/server/dispatchers/dispatcher.js:379:15)
 }
 Call log:
-- <launching> /home/runner/.cache/ms-playwright/chromium-1105/chrome-linux/chrome --disable-field-trial-config --disable-background-networking --enable-features=NetworkService,NetworkServiceInProcess --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=ImprovedCookieControls,LazyFrameLoading,GlobalMediaControls,DestroyProfileOnBrowserClose,MediaRouter,DialMediaRouteProvider,AcceptCHFrame,AutoExpandDetailsElement,CertificateTransparencyComponentUpdater,AvoidUnnecessaryBeforeUnloadCheckSync,Translate,HttpsUpgrades,PaintHolding --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --enable-automation --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-K1WvU8 --remote-debugging-pipe --no-startup-window
-- <launched> pid=3212
-- [pid=3212][err] [3212:3212:0827/082704.783026:ERROR:ozone_platform_x11.cc(243)] Missing X server or $DISPLAY
-- [pid=3212][err] [3212:3212:0827/082704.783062:ERROR:env.cc(257)] The platform failed to initialize.  Exiting.
+- <launching> /home/runner/.cache/ms-playwright/chromium-1105/chrome-linux/chrome --disable-field-trial-config --disable-background-networking --enable-features=NetworkService,NetworkServiceInProcess --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=ImprovedCookieControls,LazyFrameLoading,GlobalMediaControls,DestroyProfileOnBrowserClose,MediaRouter,DialMediaRouteProvider,AcceptCHFrame,AutoExpandDetailsElement,CertificateTransparencyComponentUpdater,AvoidUnnecessaryBeforeUnloadCheckSync,Translate,HttpsUpgrades,PaintHolding --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --enable-automation --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-UxGtny --remote-debugging-pipe --no-startup-window
+- <launched> pid=3220
+- [pid=3220][err] [3220:3220:0827/082928.553812:ERROR:ozone_platform_x11.cc(243)] Missing X server or $DISPLAY
+- [pid=3220][err] [3220:3220:0827/082928.553848:ERROR:env.cc(257)] The platform failed to initialize.  Exiting.
 
 	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:54)
 	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
@@ -109,13 +109,13 @@ Browser logs:
 ║                                                                                                ║
 ║ <3 Playwright Team                                                                             ║
 ╚════════════════════════════════════════════════════════════════════════════════════════════════╝
-    at DispatcherConnection.dispatch (/tmp/playwright-java-17306950920858329419/package/lib/server/dispatchers/dispatcher.js:379:15)
+    at DispatcherConnection.dispatch (/tmp/playwright-java-16434841733888360444/package/lib/server/dispatchers/dispatcher.js:379:15)
 }
 Call log:
-- <launching> /home/runner/.cache/ms-playwright/chromium-1105/chrome-linux/chrome --disable-field-trial-config --disable-background-networking --enable-features=NetworkService,NetworkServiceInProcess --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=ImprovedCookieControls,LazyFrameLoading,GlobalMediaControls,DestroyProfileOnBrowserClose,MediaRouter,DialMediaRouteProvider,AcceptCHFrame,AutoExpandDetailsElement,CertificateTransparencyComponentUpdater,AvoidUnnecessaryBeforeUnloadCheckSync,Translate,HttpsUpgrades,PaintHolding --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --enable-automation --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-K1WvU8 --remote-debugging-pipe --no-startup-window
-- <launched> pid=3212
-- [pid=3212][err] [3212:3212:0827/082704.783026:ERROR:ozone_platform_x11.cc(243)] Missing X server or $DISPLAY
-- [pid=3212][err] [3212:3212:0827/082704.783062:ERROR:env.cc(257)] The platform failed to initialize.  Exiting.
+- <launching> /home/runner/.cache/ms-playwright/chromium-1105/chrome-linux/chrome --disable-field-trial-config --disable-background-networking --enable-features=NetworkService,NetworkServiceInProcess --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=ImprovedCookieControls,LazyFrameLoading,GlobalMediaControls,DestroyProfileOnBrowserClose,MediaRouter,DialMediaRouteProvider,AcceptCHFrame,AutoExpandDetailsElement,CertificateTransparencyComponentUpdater,AvoidUnnecessaryBeforeUnloadCheckSync,Translate,HttpsUpgrades,PaintHolding --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --enable-automation --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-UxGtny --remote-debugging-pipe --no-startup-window
+- <launched> pid=3220
+- [pid=3220][err] [3220:3220:0827/082928.553812:ERROR:ozone_platform_x11.cc(243)] Missing X server or $DISPLAY
+- [pid=3220][err] [3220:3220:0827/082928.553848:ERROR:env.cc(257)] The platform failed to initialize.  Exiting.
 
 	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:256)
 	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
