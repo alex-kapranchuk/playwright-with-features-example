@@ -35,7 +35,7 @@ jobs:
       if: always()
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        report_paths: '**/surefire-reports/*.xml'
+        report_paths: '**/surefire-reports/TEST-*.xml'
 
     - name: Deploy to GitHub Pages
       if: always()
