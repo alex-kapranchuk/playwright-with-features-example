@@ -29,9 +29,7 @@ jobs:
 
     - name: Build with Maven
       run: mvn -B clean verify
-
-    - name: Generate Surefire Report
-      run: mvn surefire-report:report-only
+   
 
     - name: Publish JUnit Test Report
       uses: scacap/action-surefire-report@v1
@@ -40,8 +38,14 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         report_paths: '**/surefire-reports/TEST-*.xml'
 
+    
+    - name: Generate Surefire Report
+      run: mvn surefire-report:report-only
+      
     - name: Deploy to GitHub Pages
+    
       if: always()
+      
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.SECRETTOKEN }}
