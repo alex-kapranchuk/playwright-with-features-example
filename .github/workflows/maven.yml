@@ -43,6 +43,7 @@ jobs:
     
     - name: Generate HTML Surefire Report
       run: mvn surefire-report:report-only
+      continue-on-error: true
       
     - name: Deploy to GitHub Pages
     
