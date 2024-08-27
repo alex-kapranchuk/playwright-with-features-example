@@ -33,7 +33,7 @@ jobs:
       run: mvn -B clean verify
 
     - name: Generate HTML Surefire Report
-      run: mvn surefire-report:report-only
+      run: mvn surefire-report:report-only -X
       continue-on-error: true
 
     - name: Publish JUnit Test Report
@@ -48,5 +48,5 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.SECRETTOKEN }}
-        publish_dir: ./target/site/
+        publish_dir: ./target/site/surefire-report.html
         destination_dir: 'junit-reports'
