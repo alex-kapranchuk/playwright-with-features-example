@@ -8,44 +8,42 @@ on:
 
 permissions:
   contents: write
-  actions: write
-  checks: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-      - name: Set up JDK 17
-        uses: actions/setup-java@v3
-        with:
-          java-version: '17'
-          distribution: 'temurin'
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
 
-      - name: Install Playwright and Chrome
-        run: |
-          xvfb-run --auto-servernum -- mvn exec:java -e -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="install chromium"
+    - name: Install Playwright and Chrome
+      run: |
+        xvfb-run --auto-servernum -- mvn exec:java -e -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="install chromium"
 
-      - name: Build with Maven
-        run: mvn -B clean verify
+    - name: Build with Maven
+      run: mvn -B clean verify
 
-      - name: Generate HTML Surefire Report
-        run: mvn surefire-report:report-only
+    - name: Generate Surefire Report
+      run: mvn surefire-report:report-only
 
-      - name: Publish JUnit Test Report
-        uses: scacap/action-surefire-report@v1
-        if: always()
-        with:
-          github_token: ${{ secrets.SECRETTOKEN }}
-          report_paths: '**/surefire-reports/TEST-*.xml'
+    - name: Publish JUnit Test Report
+      uses: scacap/action-surefire-report@v1
+      if: always()
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        report_paths: '**/surefire-reports/TEST-*.xml'
 
-      - name: Deploy to GitHub Pages
-        if: always()
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.SECRETTOKEN }}
-          publish_dir: ./target/site/
-          destination_dir: 'junit-reports'
+    - name: Deploy to GitHub Pages
+      if: always()
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.SECRETTOKEN }}
+        publish_dir: ./target/site/
+        destination_dir: 'junit-reports'
