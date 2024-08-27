@@ -27,7 +27,7 @@ jobs:
       run: mvn -B clean verify
 
     - name: Publish JUnit Test Report
-      uses: scacap/action-surefire-report@v2
+      uses: scacap/action-surefire-report@v1
       if: always()
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
