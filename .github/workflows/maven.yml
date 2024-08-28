@@ -43,6 +43,15 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           report_paths: '**/surefire-reports/TEST-*.xml'
 
+      - name: Generate Allure Report
+        run: |
+          # Clean previous allure results and reports
+          rm -rf allure-results allure-report
+          # Generate Allure results from test execution
+          mvn allure:report
+          # Create the Allure report
+          mvn allure:aggregate
+
       - name: Deploy to GitHub Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v3
@@ -50,3 +59,11 @@ jobs:
           github_token: ${{ secrets.SECRETTOKEN }}
           publish_dir: ./target/site/
           destination_dir: 'junit-reports'
+          
+      - name: Deploy Allure Report to GitHub Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.SECRETTOKEN }}
+          publish_dir: allure-report
+          destination_dir: 'allure-reports'
