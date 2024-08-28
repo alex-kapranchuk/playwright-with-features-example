@@ -79,7 +79,8 @@ jobs:
           # Clean previous allure results and reports
           rm -rf allure-report
           # Generate the Allure report from the downloaded artifacts
-          mvn allure:serve -Dallure.results.directory=test-results/target/allure-results
+          mvn allure:aggregate -Dallure.results.directory=test-results/target/allure-results
+          mvn allure:report
 
       - name: Archive Allure Report
         if: always()
