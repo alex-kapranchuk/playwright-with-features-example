@@ -1,13 +1,24 @@
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.AriaRole;
-import com.microsoft.playwright.options.LoadState;
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
+@Epic("Epic Name: Use methods for searching")
+@Feature("Feature Name: Navigation and search")
 public class Search extends Base {
 
     @Test
+    @Feature("General search")
+    @Severity(SeverityLevel.NORMAL)
+    @DisplayName("Test: General search in site")
+    @Description("Test description: Search via search field")
     public void generalSearch() {
         NavigationHeader navigationHeader = new NavigationHeader(page);
         SearchField searchField = new SearchField(page);
@@ -37,6 +48,10 @@ public class Search extends Base {
     }
 
     @Test
+    @Feature("Favorite search")
+    @Severity(SeverityLevel.NORMAL)
+    @DisplayName("Test: Favorite search in site")
+    @Description("Test description: Search via search field and add to favorite/remove")
     public void favoriteSearch() {
         NavigationHeader navigationHeader = new NavigationHeader(page);
         SearchField searchField = new SearchField(page);

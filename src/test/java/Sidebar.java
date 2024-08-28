@@ -1,13 +1,25 @@
 import com.microsoft.playwright.ElementHandle;
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Epic("Epic Name: Check side bar")
+@Feature("Feature Name: Navigation and search")
 public class Sidebar extends Base {
 
-        @Test
+    @Test
+    @Feature("Check sidebar elements")
+    @Severity(SeverityLevel.NORMAL)
+    @DisplayName("Test: Take sidebar elements")
+    @Description("Test description: Compare two lists of element that present in elements list but is not on site")
     void guidesABCSort() {
         DocsPage docsPage = new DocsPage(page);
         docsPage.navigateToDocsPage()
@@ -26,6 +38,10 @@ public class Sidebar extends Base {
     }
 
     @Test
+    @Feature("Navigation via sidebar")
+    @Severity(SeverityLevel.NORMAL)
+    @DisplayName("Test: Navigation via sidebar")
+    @Description("Test description: Navigation via sidebar and check elements")
     void checkTitlesGettingStarted() {
         DocsPage docsPage = new DocsPage(page);
         docsPage.navigateToDocsPage()

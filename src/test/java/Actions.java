@@ -1,4 +1,10 @@
 import com.microsoft.playwright.Page;
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.nio.file.Paths;
@@ -6,9 +12,15 @@ import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
+@Epic("Epic Name: Actions")
+@Feature("Feature Name: Change theme and hover elements")
 public class Actions extends Base {
 
     @Test
+    @Feature("Some feature of hover")
+    @Severity(SeverityLevel.NORMAL)
+    @DisplayName("Test: Change color of elements after hovering")
+    @Description("Test description: The color of the text of the element change after hovering the cursor")
     void hoverActions() {
         NavigationHeader navigationHeader = new NavigationHeader(page);
 
@@ -32,6 +44,10 @@ public class Actions extends Base {
     }
 
     @Test
+    @Feature("Some feature of theme")
+    @Severity(SeverityLevel.NORMAL)
+    @DisplayName("Test: Change color of web pages after changing theme")
+    @Description("Test description: Theme has be changed")
     void changeTheme() {
         NavigationHeader navigationHeader = new NavigationHeader(page);
 

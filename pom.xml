@@ -26,6 +26,12 @@
             <version>5.11.0-M1</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-junit5</artifactId>
+            <version>2.28.0</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -60,6 +66,14 @@
                 <configuration>
                     <reportsDirectory>${project.build.directory}/site</reportsDirectory>
                     <outputName>index</outputName>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>2.12.0</version>
+                <configuration>
+                    <reportVersion>2.23.0</reportVersion>
                 </configuration>
             </plugin>
         </plugins>

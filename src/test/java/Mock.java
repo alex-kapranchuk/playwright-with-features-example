@@ -4,17 +4,27 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
 import com.microsoft.playwright.APIResponse;
 import com.microsoft.playwright.Route;
-import org.junit.jupiter.api.Disabled;
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-
+@Epic("Epic Name: Mock Data")
+@Feature("Feature Name: Mock Data and add new data")
 public class Mock extends Base {
 
-     @Test
+    @Test
+    @Feature("Mock data for test")
+    @Severity(SeverityLevel.NORMAL)
+    @DisplayName("Test: Mock Data")
+    @Description("Test description: Mock data for endpoint as a json object")
     public void mockData() {
         page.route("**/api/v1/fruits", route -> {
             route.fulfill(new Route.FulfillOptions()
@@ -26,7 +36,11 @@ public class Mock extends Base {
         assertTrue(page.waitForSelector("text=Coconut").isVisible());
     }
 
-     @Test
+    @Test
+    @Feature("Add mock data for test")
+    @Severity(SeverityLevel.NORMAL)
+    @DisplayName("Test: Add mock Data")
+    @Description("Test description: Add mock data for endpoint")
     public void addMockData() {
         page.route("**/api/v1/fruits", route -> {
             APIResponse response = route.fetch();
