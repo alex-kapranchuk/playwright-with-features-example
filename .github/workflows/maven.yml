@@ -30,7 +30,29 @@ jobs:
           xvfb-run --auto-servernum -- mvn exec:java -e -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="install chromium"
 
       - name: Build with Maven
-        run: mvn -B clean verify
+        run: mvn -B clean compile
+
+      - name: Archive Build Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-artifacts
+          path: target/
+
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Download Build Artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: build-artifacts
+
+      - name: Run Tests with Maven
+        run: mvn -B test
 
       - name: Archive Test Results
         if: always()
@@ -43,7 +65,8 @@ jobs:
 
   generate-surefire-report:
     runs-on: ubuntu-latest
-    needs: build
+    needs: test
+    if: always()  # Ensure this job runs even if 'test' job fails
 
     steps:
       - name: Checkout code
@@ -60,7 +83,8 @@ jobs:
 
   generate-allure-report:
     runs-on: ubuntu-latest
-    needs: build
+    needs: test
+    if: always()  # Ensure this job runs even if 'test' job fails
 
     steps:
       - name: Checkout code
@@ -89,6 +113,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: [generate-surefire-report, generate-allure-report]
+    if: always()  # Ensure this job runs even if report generation fails
 
     steps:
       - name: Checkout code
