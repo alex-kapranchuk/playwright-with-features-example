@@ -78,9 +78,8 @@ jobs:
         run: |
           # Clean previous allure results and reports
           rm -rf allure-report
-          # Generate the Allure report
-          mvn allure:aggregate
-          mvn allure:report
+          # Generate the Allure report from the downloaded artifacts
+          mvn allure:serve -Dallure.results.directory=test-results/target/allure-results
 
       - name: Archive Allure Report
         if: always()
@@ -88,6 +87,7 @@ jobs:
         with:
           name: allure-report
           path: allure-report
+          if-no-files-found: warn
 
   deploy:
     runs-on: ubuntu-latest
@@ -98,7 +98,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Download Surefire and Allure Reports
+      - name: Download Allure Report
         uses: actions/download-artifact@v3
         with:
           name: allure-report
